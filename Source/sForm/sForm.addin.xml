@@ -1,0 +1,31 @@
+<Addin id          = "sForm"
+       author      = "Rasmus Pedersen"
+       copyright   = "MIT X11"
+       url         = "http://www.sundown.dk/"
+       description = "Quick and easy form handling."	   
+       version     = "1.0">
+	<Runtime>
+		<Import assembly="sForm.dll"/>
+	</Runtime>
+	
+	<Dependencies>
+		<Addin id="Sorento" version="1.0"/>
+		<Addin id="sConsole" version="2.0"/>
+	</Dependencies>
+	
+	<Extension path = "/SorentoLib/Init">
+		<Type type="sForm.Addin.Init"/>
+	</Extension>	
+	
+	<Extension path = "/SorentoLib/Resolver/Functions">
+		<Type type="sForm.Addin.Function"/>
+	</Extension>			
+		
+	<Extension path = "/SorentoLib/Resolver/Renders">
+		<Type type="sForm.Addin.Render"/>
+	</Extension>				
+	
+	<Extension path = "/SorentoLib/Resolver/Ajaxes">
+		<Type type="sForm.Addin.Ajax"/>
+	</Extension>				
+</Addin>

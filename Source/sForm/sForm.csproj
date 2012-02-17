@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EC8F95D8-C8E8-4F04-98A0-DCB42FAB7F10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>sForm</RootNamespace>
+    <AssemblyName>sForm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\cgi-bin\Addins\sForm\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="SNDK, Version=1.0.4416.25851, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SNDK.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SorentoLib, Version=1.0.4430.17015, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SorentoLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="sConsole, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\sConsole.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Mono.Posix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="sForm\Runtime.cs" />
+    <Compile Include="sForm.Enums\ConfigKey.cs" />
+    <Compile Include="sForm.Addin\Init.cs" />
+    <Compile Include="sForm.Strings\Exception.cs" />
+    <Compile Include="sForm.Strings\LogDebug.cs" />
+    <Compile Include="sForm.Enums\EmailBodyType.cs" />
+    <Compile Include="sForm.Addin\Function.cs" />
+    <Compile Include="sForm.Addin\Render.cs" />
+    <Compile Include="sForm.Addin\Ajax.cs" />
+    <Compile Include="sForm\Form.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="sForm\" />
+    <Folder Include="sForm.Enums\" />
+    <Folder Include="sForm.Addin\" />
+    <Folder Include="sForm.Strings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="sForm.addin.xml" />
+  </ItemGroup>
+</Project>

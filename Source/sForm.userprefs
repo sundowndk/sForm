@@ -1,0 +1,21 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="sForm/sForm/Form.cs">
+    <Files>
+      <File FileName="sForm/sForm.Enums/EmailBodyType.cs" Line="29" Column="16" />
+      <File FileName="sForm/sForm.Addin/Function.cs" Line="73" Column="47" />
+      <File FileName="sForm/sForm.Addin/Render.cs" Line="36" Column="2" />
+      <File FileName="sForm/sForm.Addin/Ajax.cs" Line="81" Column="14" />
+      <File FileName="sForm/sForm/Form.cs" Line="335" Column="37" />
+      <File FileName="sForm/sForm.addin.xml" Line="29" Column="20" />
+      <File FileName="web/build.sh" Line="37" Column="1" />
+      <File FileName="web/javascript.jsb" Line="16" Column="1" />
+      <File FileName="sForm/sForm.Addin/Init.cs" Line="16" Column="49" />
+      <File FileName="sForm/sForm/Runtime.cs" Line="89" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

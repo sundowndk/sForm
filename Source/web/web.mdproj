@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ItemType>GenericProject</ItemType>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BD33E835-C46C-45E8-A6FD-70C4F198EFA2}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>.\</OutputPath>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="build.sh bin/Debug" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="cgi-bin\" />
+    <Folder Include="cgi-bin\Addins\" />
+    <Folder Include="javascript\" />
+    <Folder Include="cgi-bin\Addins\sForm\" />
+    <Folder Include="cgi-bin\Addins\sForm\data\content\" />
+    <Folder Include="cgi-bin\Addins\sForm\data\html\" />
+    <Folder Include="cgi-bin\Addins\sForm\data\content\addins\" />
+    <Folder Include="cgi-bin\Addins\sForm\data\content\addins\sform\" />
+    <Folder Include="cgi-bin\Addins\sForm\data\html\xml\" />
+    <Folder Include="cgi-bin\Addins\sForm\data\html\xml\addins\" />
+    <Folder Include="cgi-bin\Addins\sForm\data\html\xml\addins\sform\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="build.sh" />
+    <None Include="javascript.jsb" />
+  </ItemGroup>
+</Project>
