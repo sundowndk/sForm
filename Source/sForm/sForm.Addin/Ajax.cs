@@ -32,90 +32,63 @@ using SorentoLib;
 
 namespace sForm.Addin
 {
-	public class Ajax : SorentoLib.Addins.IAjax
+	public class Ajax : SorentoLib.Addins.IAjaxBaseClass, SorentoLib.Addins.IAjax		
 	{
-		#region Private Fields
-		private List<string> _namespaces = new List<string> ();
-		#endregion
-
 		#region Constructor
 		public Ajax ()
 		{
-			this._namespaces.Add ("autoform");
+			base.NameSpaces.Add ("sform");
 		}
 		#endregion
-
+		
 		#region Public Methods
-		public bool IsProvided (string Namespace)
-		{
-			return this._namespaces.Exists (delegate (string s) {return (s == Namespace.ToLower ());});
-		}
-
-		public SorentoLib.Ajax.Respons Process (SorentoLib.Session Session, string Fullname, string Method)
+		new public SorentoLib.Ajax.Respons Process (SorentoLib.Session Session, string Fullname, string Method)
 		{
 			SorentoLib.Ajax.Respons result = new SorentoLib.Ajax.Respons ();
 			SorentoLib.Ajax.Request request = new SorentoLib.Ajax.Request (Session.Request.QueryJar.Get ("data").Value);
 
 			switch (Fullname.ToLower ())
 			{
-				#region Autoform.Form
-				case "autoform.form":
+				#region sForm.Form
+				case "sform.form":
 					switch (Method.ToLower ())
 					{
 						case "new":
 						{
-//							if (Session.AccessLevel < SorentoLib.Enums.Accesslevel.Author) throw new Exception (string.Format (Autoform.Strings.Exception.AjaxSessionPriviliges, "form.new"));
-
-//							Form form = Form.FromAjaxRequest (request);
-//							form.Save ();
-//							form.ToAjaxRespons (result);
-//
+//							if (Session.AccessLevel < SorentoLib.Enums.Accesslevel.Author) throw new Exception (string.Format (Autoform.Strings.Exception.AjaxSessionPriviliges, "form.new"));						
+							result.Add (new Form (request.getValue<string> ("title")));
 							break;
 						}
 
 						case "load":
 						{
-//							Form form = Form.Load (new Guid (request.Key<string>("id")));
-//							form.ToAjaxRespons (result);
-//
+							result.Add (Form.Load (request.getValue<Guid> ("id")));
 							break;
 						}
 
 						case "save":
 						{
 //							if (Session.AccessLevel < SorentoLib.Enums.Accesslevel.Author) throw new Exception (string.Format (Autoform.Strings.Exception.AjaxSessionPriviliges, "form.save"));
-
-//							Form form = Form.FromAjaxRequest (request);
-//							form.Save ();
-//
+							request.getValue<Form> ("sform.form").Save ();
 							break;
 						}
 
 						case "delete":
 						{
 //							if (Session.AccessLevel < SorentoLib.Enums.Accesslevel.Editor) throw new Exception (string.Format (Autoform.Strings.Exception.AjaxSessionPriviliges, "form.delete"));
-
-							sForm.Form.Delete (new Guid (request.Key<string> ("id")));
-
+							Form.Delete (request.getValue<Guid> ("id"));
 							break;
 						}
 
 						case "list":
 						{
 //							if (Session.AccessLevel < SorentoLib.Enums.Accesslevel.Author) throw new Exception (string.Format (Autoform.Strings.Exception.AjaxSessionPriviliges, "form.list"));
-
-//							List<Hashtable> forms = new List<Hashtable> ();
-//							foreach (Form form in Form.List ())
-//							{
-//								forms.Add (form.ToAjaxItem ());
-//							}
-//							result.Data.Add ("forms", forms);
-
+							result.Add (Form.List ());
 							break;
 						}
 					}
 					break;
-				#endregion
+				#endregion8
 			}
 
 			return result;

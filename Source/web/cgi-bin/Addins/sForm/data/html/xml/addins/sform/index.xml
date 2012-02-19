@@ -1,0 +1,33 @@
+<sui>
+	<container title="sForm" icon="Icon32Edit" stylesheet="SUIContainerNoBorder">		
+		<layoutbox type="vertical" width="100%" height="100%" stylesheet="SUILayoutboxNoBorder">
+			<panel size="*">
+				<tabview>
+					<tab label="Forms" selected="true">							
+						<layoutbox type="vertical" width="100%" height="100%" stylesheet="SUILayoutboxNoBorder">
+							<panel size="*">
+								<listview tag="forms" width="100%" height="100%">
+									<column tag="id" />		
+									<column tag="title" label="Title" width="200px" visible="true" />								
+									<column tag="emailto" label="Recipient" width="200px" visible="true" />									
+								</listview>
+							</panel>
+							<panel size="100px">
+								<layoutbox type="horizontal" width="100%" height="100%" stylesheet="SUILayoutboxNoBorder">
+									<panel size="*">
+										<button tag="formcreate" width="100%" label="Create" disabled="false"/>
+										<button tag="formedit" width="100%" label="Edit" disabled="true"/>
+										<button tag="formdelete" width="100%" label="Delete" disabled="true"/>
+									</panel>
+								</layoutbox>				
+							</panel>
+						</layoutbox>												
+					</tab>	
+					<tab label="Settings">
+					</tab>
+				</tabview>
+			</panel>
+		</layoutbox>				
+	</container>
+</sui>
+

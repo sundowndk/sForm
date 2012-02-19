@@ -1,15 +1,9 @@
-<solution name="sCMS" outputdirectory="">	
-	<project name="scms">
-		<class name="sCMS">	
-			<class name="root">
-				<js file="javascript/root.js" />
+<solution name="sForm" outputdirectory="">	
+	<project name="sform">
+		<class name="sForm">	
+			<class name="form">
+				<js file="javascript/form.js" />
 			</class>		
-			<class name="page">
-				<js file="javascript/page.js" />
-			</class>
-			<class name="stylesheet">
-				<js file="javascript/stylesheet.js" />
-			</class>			
 		</class>
 	</project>	
 </solution>

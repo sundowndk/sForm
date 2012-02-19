@@ -38,19 +38,15 @@ namespace sForm
 {
 	public static class Runtime
 	{
-		#region Private Static Fields				
-		#endregion
-
-		#region Public Static Fields		
-		#endregion
-
 		#region Public Static Methods
 		public static void Initialize ()
 		{	
 			try
 			{
+				// Set defaults.
 				SetDefaults ();			
 			
+				// Add menu entry for sForm.
 				sConsole.Menu.AddItem ("addins", "sform", "sForm", "addins/sform/", 0);								
 				
 				// Create symlinks if they dont exist.
@@ -66,11 +62,14 @@ namespace sForm
 					dirinfo.CreateSymbolicLink (SorentoLib.Services.Config.Get<string> (SorentoLib.Enums.ConfigKey.path_addins) + "sConsole/data/html/xml/addins/sform");
 				}
 			
-//				if (!File.Exists (SorentoLib.Services.Config.Get<string> (SorentoLib.Enums.ConfigKey.path_addins) + "sConsole/data/html/js/sform.js"))
-//				{
-//					UnixFileInfo dirinfo = new UnixFileInfo (SorentoLib.Services.Config.Get<string> (SorentoLib.Enums.ConfigKey.path_addins) + "sCMS/data/html/js/sform.js");
-//					dirinfo.CreateSymbolicLink (SorentoLib.Services.Config.Get<string> (SorentoLib.Enums.ConfigKey.path_addins) + "sConsole/data/html/js/sform.js");
-//				}				
+				if (!File.Exists (SorentoLib.Services.Config.Get<string> (SorentoLib.Enums.ConfigKey.path_addins) + "sConsole/data/html/js/sform.js"))
+				{
+					UnixFileInfo dirinfo = new UnixFileInfo (SorentoLib.Services.Config.Get<string> (SorentoLib.Enums.ConfigKey.path_addins) + "sForm/data/html/js/sform.js");
+					dirinfo.CreateSymbolicLink (SorentoLib.Services.Config.Get<string> (SorentoLib.Enums.ConfigKey.path_addins) + "sConsole/data/html/js/sform.js");
+				}				
+				
+				// Tell sConsole what files to include.
+				Include.Add (sConsole.Enums.IncludeType.Javascript, "/js/sform.js", "SFORM", 101);
 			}
 			catch (Exception exception)
 			{
@@ -84,5 +83,4 @@ namespace sForm
 		}		
 		#endregion				
 	}			
-
 }

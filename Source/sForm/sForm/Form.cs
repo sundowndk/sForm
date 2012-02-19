@@ -41,7 +41,7 @@ namespace sForm
 		#endregion
 
 		#region Public Static Fields
-		public static string DatastoreAisle = "autoform_forms";
+		public static string DatastoreAisle = "sform_forms";
 		#endregion
 
 		#region Private Fields
@@ -163,16 +163,30 @@ namespace sForm
 		#endregion
 
 		#region Constructor
-		public Form ()
+		public Form (string Title)
 		{
 			this._id = Guid.NewGuid ();
 			this._createtimestamp = SNDK.Date.CurrentDateTimeToTimestamp ();
 			this._updatetimestamp = SNDK.Date.CurrentDateTimeToTimestamp ();
+			this._title = Title;
 			this._emailfrom = string.Empty;
 			this._emailto = string.Empty;
 			this._emailsubject = string.Empty;
 			this._emailbody = string.Empty;
 			this._emailbodytype = Enums.EmailBodyType.Plain;
+		}
+		
+		public Form ()
+		{
+			this._id = Guid.Empty;
+			this._createtimestamp = 0;
+			this._updatetimestamp = 0;
+			this._title = string.Empty;
+			this._emailfrom = string.Empty;
+			this._emailto = string.Empty;
+			this._emailsubject = string.Empty;
+			this._emailbody = string.Empty;
+			this._emailbodytype = Enums.EmailBodyType.Plain;			
 		}
 		#endregion
 
@@ -188,6 +202,7 @@ namespace sForm
 				item.Add ("id", this._id);
 				item.Add ("createtimestamp", this._createtimestamp);
 				item.Add ("updatetimestamp", this._updatetimestamp);
+				item.Add ("title", this._title);
 				item.Add ("emailfrom", this._emailfrom);
 				item.Add ("emailto", this._emailto);
 				item.Add ("emailsubject", this._emailsubject);
@@ -303,28 +318,6 @@ namespace sForm
 			}
 		}
 
-//		public void ToAjaxRespons (SorentoLib.Ajax.Respons Respons)
-//		{
-//			Respons.Data = ToAjaxItem ();
-//		}
-//
-//		public Hashtable ToAjaxItem ()
-//		{
-//			Hashtable result = new Hashtable ();
-//
-//			result.Add ("id", this._id);
-//			result.Add ("createtimestamp", this._createtimestamp);
-//			result.Add ("updatetimestamp", this._updatetimestamp);
-//			result.Add ("title", this._title);
-//			result.Add ("emailto", this._emailto);
-//			result.Add ("emailfrom", this._emailfrom);
-//			result.Add ("emailsubject", this._emailsubject);
-//			result.Add ("emailbody", this._emailbody);
-//			result.Add ("emailbodytype", this._emailbodytype.ToString ().ToLower ());
-//
-//			return result;
-//		}
-//		
 		public XmlDocument ToXmlDocument ()
 		{
 			Hashtable result = new Hashtable ();
@@ -332,9 +325,9 @@ namespace sForm
 			result.Add ("id", this._id);
 			result.Add ("createtimestamp", this._createtimestamp);
 			result.Add ("updatetimestamp", this._updatetimestamp);
-			result.Add ("title", this._type);
-			result.Add ("emailto", this._name);
-			result.Add ("emailfrom", this._status);
+			result.Add ("title", this._title);
+			result.Add ("emailto", this._emailto);
+			result.Add ("emailfrom", this._emailfrom);
 			result.Add ("emailsubject", this._emailsubject);
 			result.Add ("emailbody", this._emailbody);
 			result.Add ("emailbodytype", this._emailbodytype);
@@ -344,12 +337,14 @@ namespace sForm
 		#endregion
 
 		#region Public Static Methods
-		public static Form Load (Guid Id)
+		public static Form Load (Guid id)
 		{
+			Form result;
+			
 			try
 			{
-				Hashtable item = (Hashtable)SNDK.Convert.FromXmlDocument (SNDK.Convert.XmlNodeToXmlDocument (Services.Datastore.Get<XmlDocument> (DatastoreAisle, id.ToString ()).SelectSingleNode ("(//sorentolib.usergroup)[1]")));
-				result = new Usergroup ();
+				Hashtable item = (Hashtable)SNDK.Convert.FromXmlDocument (SNDK.Convert.XmlNodeToXmlDocument (SorentoLib.Services.Datastore.Get<XmlDocument> (DatastoreAisle, id.ToString ()).SelectSingleNode ("(//sform.form)[1]")));
+				result = new Form ();
 
 				result._id = new Guid ((string)item["id"]);
 
@@ -396,25 +391,25 @@ namespace sForm
 			catch (Exception exception)
 			{
 				// LOG: LogDebug.ExceptionUnknown
-				Services.Logging.LogDebug (string.Format (Strings.LogDebug.ExceptionUnknown, "SFORM.FORM", exception.Message));
+				SorentoLib.Services.Logging.LogDebug (string.Format (SorentoLib.Strings.LogDebug.ExceptionUnknown, "SFORM.FORM", exception.Message));
 
 				// EXCEPTION: Excpetion.FormLoad
-				throw new Exception (string.Format (Strings.Exception.FormLoad, Id.ToString ()));
+				throw new Exception (string.Format (Strings.Exception.FormLoad, id.ToString ()));
 			}
+			
+			return result;
 		}
 
 		public static void Delete (Guid Id)
 		{
 			try
 			{
-				Services.Datastore.Delete (DatastoreAisle, id.ToString ());
-
-				ServiceStatsUpdate ();
+				SorentoLib.Services.Datastore.Delete (DatastoreAisle, Id.ToString ());
 			}
 			catch (Exception exception)
 			{
 				// LOG: LogDebug.ExceptionUnknown
-				Services.Logging.LogDebug (string.Format (Strings.LogDebug.ExceptionUnknown, "SFORM.FORM", exception.Message));
+				SorentoLib.Services.Logging.LogDebug (string.Format (SorentoLib.Strings.LogDebug.ExceptionUnknown, "SFORM.FORM", exception.Message));
 
 				// EXCEPTION: Exception.FormDelete
 				throw new Exception (string.Format (Strings.Exception.FormDelete, Id.ToString ()));
@@ -429,107 +424,25 @@ namespace sForm
 			{
 				try
 				{
-					result.Add (Form.Load (new Guid (id)));
+					result.Add (Load (new Guid (id)));
 				}
 				catch (Exception exception)
 				{
 					// LOG: LogDebug.ExceptionUnknown
-					Services.Logging.LogDebug (string.Format (Strings.LogDebug.ExceptionUnknown, "SFORM.FORM", exception.Message));
+					SorentoLib.Services.Logging.LogDebug (string.Format (SorentoLib.Strings.LogDebug.ExceptionUnknown, "SFORM.FORM", exception.Message));
 					
+					// LOG: LogDebug.FormList
 					SorentoLib.Services.Logging.LogDebug (string.Format (Strings.LogDebug.FormList, id));
 				}
 			}
 
 			return result;
 		}
-
-//		public static Form FromAjaxRequest (SorentoLib.Ajax.Request Request)
-//		{
-//			return FromAjaxItem (Request.Data);
-//		}
-//
-//		public static Form FromAjaxItem (Hashtable Item)
-//		{
-//			Form result;
-//
-//			Guid id = Guid.Empty;
-//
-//			try
-//			{
-//				id = new Guid ((string)Item["id"]);
-//			}
-//			catch {}
-//
-//			if (id != Guid.Empty)
-//			{
-//				try
-//				{
-//					result = Form.Load (id);
-//				}
-//				catch
-//				{
-//					result = new Form ();
-//					result._id = id;
-//					if (Item.ContainsKey ("createtimestamp"))
-//					{
-//						result._createtimestamp = int.Parse ((string)Item["createtimestamp"]);
-//					}
-//
-//					if (Item.ContainsKey ("updatetimestamp"))
-//					{
-//						result._createtimestamp = int.Parse ((string)Item["updatetimestamp"]);
-//					}
-//				}
-//			}
-//			else
-//			{
-//				result = new Form ();
-//			}
-//
-//			if (Item.ContainsKey ("title"))
-//			{
-//				result._title = (string)Item["title"];
-//			}
-//
-//			if (Item.ContainsKey ("emailto"))
-//			{
-//				result._emailto = (string)Item["emailto"];
-//			}
-//
-//			if (Item.ContainsKey ("emailfrom"))
-//			{
-//				result._emailfrom = (string)Item["emailfrom"];
-//			}
-//
-//			if (Item.ContainsKey ("emailsubject"))
-//			{
-//				result._emailsubject = (string)Item["emailsubject"];
-//			}
-//
-//			if (Item.ContainsKey ("emailbody"))
-//			{
-//				result._emailbody = (string)Item["emailbody"];
-//			}
-//
-//			if (Item.ContainsKey ("emailbodytype"))
-//			{
-//				try
-//				{
-//					result._emailbodytype = SNDK.Convert.StringToEnum<Enums.EmailBodyType> ((string)Item["emailbodytype"]);
-//				}
-//				catch
-//				{
-//					throw new Exception (string.Format (Strings.Exception.FormAjaxItem, "EMAILBODYTYPE"));
-//				}
-//			}
-//
-//			return result;
-//		}
 		
 		public static Form FromXmlDocument (XmlDocument xmlDocument)
 		{
 			Hashtable item;
-			Usergroup result;
+			Form result;
 
 			try
 			{

@@ -1,17 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="sForm/sForm/Form.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="web/cgi-bin/Addins/sForm/data/content/addins/sform/index_script_form.stpl">
     <Files>
-      <File FileName="sForm/sForm.Enums/EmailBodyType.cs" Line="29" Column="16" />
-      <File FileName="sForm/sForm.Addin/Function.cs" Line="73" Column="47" />
-      <File FileName="sForm/sForm.Addin/Render.cs" Line="36" Column="2" />
-      <File FileName="sForm/sForm.Addin/Ajax.cs" Line="81" Column="14" />
-      <File FileName="sForm/sForm/Form.cs" Line="335" Column="37" />
-      <File FileName="sForm/sForm.addin.xml" Line="29" Column="20" />
-      <File FileName="web/build.sh" Line="37" Column="1" />
-      <File FileName="web/javascript.jsb" Line="16" Column="1" />
-      <File FileName="sForm/sForm.Addin/Init.cs" Line="16" Column="49" />
-      <File FileName="sForm/sForm/Runtime.cs" Line="89" Column="1" />
+      <File FileName="web/cgi-bin/Addins/sForm/data/content/addins/sform/index_script.stpl" Line="31" Column="39" />
+      <File FileName="sForm/sForm.Addin/Ajax.cs" Line="72" Column="43" />
+      <File FileName="web/cgi-bin/Addins/sForm/data/content/addins/sform/index_script_form.stpl" Line="88" Column="84" />
+      <File FileName="sForm/sForm/Form.cs" Line="394" Column="132" />
+      <File FileName="web/javascript/form.js" Line="54" Column="40" />
+      <File FileName="web/cgi-bin/Addins/sForm/data/html/xml/addins/sform/form_edit.xml" Line="35" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

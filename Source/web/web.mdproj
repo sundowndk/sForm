@@ -9,7 +9,7 @@
     <ProjectGuid>{BD33E835-C46C-45E8-A6FD-70C4F198EFA2}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>.\</OutputPath>
+    <OutputPath>.</OutputPath>
     <CustomCommands>
       <CustomCommands>
         <Command type="AfterBuild" command="build.sh bin/Debug" />
@@ -21,16 +21,24 @@
     <Folder Include="cgi-bin\Addins\" />
     <Folder Include="javascript\" />
     <Folder Include="cgi-bin\Addins\sForm\" />
-    <Folder Include="cgi-bin\Addins\sForm\data\content\" />
     <Folder Include="cgi-bin\Addins\sForm\data\html\" />
-    <Folder Include="cgi-bin\Addins\sForm\data\content\addins\" />
-    <Folder Include="cgi-bin\Addins\sForm\data\content\addins\sform\" />
     <Folder Include="cgi-bin\Addins\sForm\data\html\xml\" />
     <Folder Include="cgi-bin\Addins\sForm\data\html\xml\addins\" />
     <Folder Include="cgi-bin\Addins\sForm\data\html\xml\addins\sform\" />
+    <Folder Include="cgi-bin\Addins\sForm\data\html\js\" />
+    <Folder Include="cgi-bin\Addins\sForm\data\content\" />
+    <Folder Include="cgi-bin\Addins\sForm\data\content\addins\" />
+    <Folder Include="cgi-bin\Addins\sForm\data\content\addins\sform\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="build.sh" />
     <None Include="javascript.jsb" />
+    <None Include="javascript\form.js" />
+    <None Include="cgi-bin\Addins\sForm\data\content\addins\sform\index.stpl" />
+    <None Include="cgi-bin\Addins\sForm\data\content\addins\sform\index_script.stpl" />
+    <None Include="cgi-bin\Addins\sForm\data\html\xml\addins\sform\index.xml" />
+    <None Include="cgi-bin\Addins\sForm\data\html\xml\addins\sform\form_create.xml" />
+    <None Include="cgi-bin\Addins\sForm\data\content\addins\sform\index_script_form.stpl" />
+    <None Include="cgi-bin\Addins\sForm\data\html\xml\addins\sform\form_edit.xml" />
   </ItemGroup>
 </Project>
