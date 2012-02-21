@@ -1,9 +1,7 @@
 <sui>
 	<container title="sForm" icon="Icon32Edit" stylesheet="SUIContainerNoBorder">		
 		<layoutbox type="vertical" width="100%" height="100%" stylesheet="SUILayoutboxNoBorder">
-			<panel size="*">
-				<tabview>
-					<tab label="Forms" selected="true">							
+			<panel size="*">				
 						<layoutbox type="vertical" width="100%" height="100%" stylesheet="SUILayoutboxNoBorder">
 							<panel size="*">
 								<listview tag="forms" width="100%" height="100%">
@@ -22,10 +20,6 @@
 								</layoutbox>				
 							</panel>
 						</layoutbox>												
-					</tab>	
-					<tab label="Settings">
-					</tab>
-				</tabview>
 			</panel>
 		</layoutbox>				
 	</container>

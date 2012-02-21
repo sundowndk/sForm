@@ -1,13 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="web/cgi-bin/Addins/sForm/data/content/addins/sform/index_script_form.stpl">
+  <MonoDevelop.Ide.Workbench ActiveDocument="web/cgi-bin/Addins/sForm/data/content/addins/sform/index_script.stpl">
     <Files>
-      <File FileName="web/cgi-bin/Addins/sForm/data/content/addins/sform/index_script.stpl" Line="31" Column="39" />
+      <File FileName="web/cgi-bin/Addins/sForm/data/content/addins/sform/index_script.stpl" Line="44" Column="1" />
       <File FileName="sForm/sForm.Addin/Ajax.cs" Line="72" Column="43" />
       <File FileName="web/cgi-bin/Addins/sForm/data/content/addins/sform/index_script_form.stpl" Line="88" Column="84" />
       <File FileName="sForm/sForm/Form.cs" Line="394" Column="132" />
       <File FileName="web/javascript/form.js" Line="54" Column="40" />
       <File FileName="web/cgi-bin/Addins/sForm/data/html/xml/addins/sform/form_edit.xml" Line="35" Column="33" />
+      <File FileName="web/cgi-bin/Addins/sForm/data/html/xml/addins/sform/index.xml" Line="2" Column="25" />
+      <File FileName="web/cgi-bin/Addins/sForm/data/content/addins/sform/index.stpl" Line="13" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
