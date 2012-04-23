@@ -26,7 +26,7 @@ done
 # SETUP                                            #
 ####################################################
 echo "Setting up build structur..."
-#mkdir "$OUTPUTDIR/cgi-bin/Addins/sForm/data/html/js/"
+mkdir "$OUTPUTDIR/cgi-bin/Addins/sForm/data/html/js/"
 
 ####################################################
 # JAVASCRIPT                                       #

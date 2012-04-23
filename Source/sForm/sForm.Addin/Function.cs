@@ -40,7 +40,7 @@ namespace sForm.Addin
 		#region Constructor
 		public Function ()
 		{
-			this._namespaces.Add ("autoform");
+			this._namespaces.Add ("sform");
 		}
 		#endregion
 
@@ -55,7 +55,7 @@ namespace sForm.Addin
 			switch (Fullname.ToLower ())
 			{
 				#region Form
-				case "autoform.form":
+				case "sform.form":
 
 					switch (Method.ToLower ())
 					{

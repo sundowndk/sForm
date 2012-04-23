@@ -297,12 +297,15 @@ namespace sForm
 					{
 						try
 						{
-							string key = tokens[token].Groups[1].Value;
-							string value = Session.Request.QueryJar.Get (key).Value;
+							string key = tokens[token].Groups[1].Value.ToUpper ();
+							string value = Session.Request.QueryJar.Get (key).Value;							
 							emailbody = emailbody.Replace ("%%" + key + "%%", value);
 						}
-						catch
-						{}
+						catch (Exception e)
+						{
+							Console.WriteLine (e);
+							
+						}
 					}
 				}
 			}
