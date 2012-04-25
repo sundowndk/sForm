@@ -25,12 +25,12 @@ done
 ####################################################
 # SETUP                                            #
 ####################################################
-echo "Setting up build structur..."
-mkdir "$OUTPUTDIR/cgi-bin/Addins/sForm/data/html/js/"
+#echo "Setting up build structur..."
+#mkdir "$OUTPUTDIR/cgi-bin/Addins/sForm/data/html/js/"
 
 ####################################################
 # JAVASCRIPT                                       #
 ####################################################
 echo "Building 'javascript'..."
-jsbuilder javascript.jsb "$OUTPUTDIR/cgi-bin/Addins/sForm/data/html/js/"
+jsbuilder javascript.jsb "$OUTPUTDIR/cgi-bin/Addins/sForm/data/js/"
 

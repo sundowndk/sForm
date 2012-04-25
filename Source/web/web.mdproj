@@ -21,24 +21,18 @@
     <Folder Include="cgi-bin\Addins\" />
     <Folder Include="javascript\" />
     <Folder Include="cgi-bin\Addins\sForm\" />
-    <Folder Include="cgi-bin\Addins\sForm\data\html\" />
-    <Folder Include="cgi-bin\Addins\sForm\data\html\xml\" />
-    <Folder Include="cgi-bin\Addins\sForm\data\html\xml\addins\" />
-    <Folder Include="cgi-bin\Addins\sForm\data\html\xml\addins\sform\" />
-    <Folder Include="cgi-bin\Addins\sForm\data\html\js\" />
-    <Folder Include="cgi-bin\Addins\sForm\data\content\" />
-    <Folder Include="cgi-bin\Addins\sForm\data\content\addins\" />
-    <Folder Include="cgi-bin\Addins\sForm\data\content\addins\sform\" />
+    <Folder Include="cgi-bin\Addins\sForm\data\" />
+    <Folder Include="cgi-bin\Addins\sForm\data\js\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="build.sh" />
     <None Include="javascript.jsb" />
     <None Include="javascript\form.js" />
-    <None Include="cgi-bin\Addins\sForm\data\content\addins\sform\index.stpl" />
-    <None Include="cgi-bin\Addins\sForm\data\content\addins\sform\index_script.stpl" />
-    <None Include="cgi-bin\Addins\sForm\data\html\xml\addins\sform\index.xml" />
-    <None Include="cgi-bin\Addins\sForm\data\html\xml\addins\sform\form_create.xml" />
-    <None Include="cgi-bin\Addins\sForm\data\content\addins\sform\index_script_form.stpl" />
-    <None Include="cgi-bin\Addins\sForm\data\html\xml\addins\sform\form_edit.xml" />
+    <None Include="cgi-bin\Addins\sForm\data\content\index.stpl" />
+    <None Include="cgi-bin\Addins\sForm\data\content\index_script.stpl" />
+    <None Include="cgi-bin\Addins\sForm\data\content\index_script_form.stpl" />
+    <None Include="cgi-bin\Addins\sForm\data\xml\form_create.xml" />
+    <None Include="cgi-bin\Addins\sForm\data\xml\form_edit.xml" />
+    <None Include="cgi-bin\Addins\sForm\data\xml\index.xml" />
   </ItemGroup>
 </Project>
