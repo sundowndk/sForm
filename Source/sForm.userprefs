@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="sForm/build.sh">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="sForm/sForm/Runtime.cs">
     <Files>
-      <File FileName="sForm/sForm/Runtime.cs" Line="59" Column="249" />
+      <File FileName="sForm/sForm/Runtime.cs" Line="60" Column="234" />
       <File FileName="web/build.sh" Line="35" Column="66" />
       <File FileName="sForm/sForm.Addin/Function.cs" Line="43" Column="32" />
       <File FileName="sForm/sForm/Form.cs" Line="301" Column="64" />
