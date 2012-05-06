@@ -9,44 +9,50 @@
     <OutputType>Library</OutputType>
     <RootNamespace>sForm</RootNamespace>
     <AssemblyName>sForm</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>none</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug\cgi-bin\Addins\sForm\</OutputPath>
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="build.sh ${TargetDir}" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Release</OutputPath>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\sForm\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" command="build.sh ${TargetDir}" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="SNDK, Version=1.0.4416.25851, Culture=neutral, PublicKeyToken=null">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="System.Xml" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="SNDK">
       <HintPath>..\Lib\SNDK.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="SorentoLib, Version=1.0.4430.17015, Culture=neutral, PublicKeyToken=null">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="SorentoLib">
       <HintPath>..\Lib\SorentoLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="sConsole, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="sConsole">
       <HintPath>..\Lib\sConsole.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="System.Xml" />
-    <Reference Include="Mono.Posix" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
@@ -67,8 +73,21 @@
     <Folder Include="sForm.Enums\" />
     <Folder Include="sForm.Addin\" />
     <Folder Include="sForm.Strings\" />
+    <Folder Include="resources\htdocs\" />
+    <Folder Include="resources\js\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="sForm.addin.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="javascript\form.js" />
+    <None Include="resources\content\index.stpl" />
+    <None Include="resources\content\index_script.stpl" />
+    <None Include="resources\content\index_script_form.stpl" />
+    <None Include="resources\xml\form_create.xml" />
+    <None Include="resources\xml\form_edit.xml" />
+    <None Include="resources\xml\index.xml" />
+    <None Include="build.sh" />
+    <None Include="javascript.jsb" />
   </ItemGroup>
 </Project>

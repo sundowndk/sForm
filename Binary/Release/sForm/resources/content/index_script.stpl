@@ -1,0 +1,43 @@
+<script language="JavaScript">
+	
+	<%Include ("index_script_form.stpl")%>
+	
+	// ##########################################################################################################################################
+	// # UI
+	// ##########################################################################################################################################		
+	UI.init = 		function ()
+					{								 						
+						UI.elements.content.forms.setAttribute ("onChange", UI.onChange);						
+						UI.elements.content.formcreate.setAttribute ("onClick", form.create);
+						UI.elements.content.formedit.setAttribute ("onClick", form.edit);
+						UI.elements.content.formdelete.setAttribute ("onClick", form.delete);						
+						
+						UI.set ();
+						SNDK.SUI.init ();
+					};
+	
+	UI.set =		function ()
+					{					
+						UI.elements.content.forms.setItems (sForm.form.list ());
+						
+						UI.onChange ();
+					};
+				
+	UI.onChange = 	function ()
+					{			
+						if (UI.elements.content.forms.getItem ())
+		 				{
+		 					UI.elements.content.formedit.setAttribute ("disabled", false);
+		 					UI.elements.content.formdelete.setAttribute ("disabled", false);
+		 				}
+		 				else
+		 				{
+		 					UI.elements.content.formedit.setAttribute ("disabled", true);
+		 					UI.elements.content.formdelete.setAttribute ("disabled", true);
+		 				}		 			 				
+					};
+	
+	UI.init ();		
+</script>
+
+
