@@ -2,11 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="sForm/sForm/Runtime.cs">
     <Files>
-      <File FileName="sForm/sForm/Runtime.cs" Line="60" Column="234" />
-      <File FileName="web/build.sh" Line="35" Column="66" />
+      <File FileName="sForm/sForm/Runtime.cs" Line="58" Column="1" />
       <File FileName="sForm/sForm.Addin/Function.cs" Line="43" Column="32" />
       <File FileName="sForm/sForm/Form.cs" Line="301" Column="64" />
-      <File FileName="web/javascript.jsb" Line="1" Column="1" />
       <File FileName="sForm/build.sh" Line="30" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
