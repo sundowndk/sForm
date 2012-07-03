@@ -7,7 +7,8 @@
 	// ##########################################################################################################################################		
 	UI.init = 		function ()
 					{								 						
-						UI.elements.content.forms.setAttribute ("onChange", UI.onChange);						
+						UI.elements.content.forms.setAttribute ("onChange", UI.onChange);	
+						UI.elements.content.forms.setAttribute ("onDoubleClick", form.edit);					
 						UI.elements.content.formcreate.setAttribute ("onClick", form.create);
 						UI.elements.content.formedit.setAttribute ("onClick", form.edit);
 						UI.elements.content.formdelete.setAttribute ("onClick", form.delete);						

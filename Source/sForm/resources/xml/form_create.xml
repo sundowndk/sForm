@@ -1,31 +1,27 @@
 <sui elementheight="50px">
-	<canvas width="600px" height="180px" canScroll="false">	
-		<container title="Create new form" icon="Icon32Edit" stylesheet="SUIContainerModal">
-			<layoutbox type="horizontal" stylesheet="LayoutboxNoborder">			
-				<panel size="%elementheight%">
-					<layoutbox type="vertical">
-						<panel size="100px">
-							<label text="Title"/>
-						</panel>					
-						<panel size="*">
-							<textbox tag="title" width="100%" focus="true" />
-						</panel>					
-					</layoutbox>
-				</panel>
+	<layoutbox type="horizontal" stylesheet="LayoutboxNoborder" width="600px" height="100px">		
+		<panel size="%elementheight%">
+			<layoutbox type="vertical">
+				<panel size="100px">
+					<label text="Title"/>
+				</panel>					
+				<panel size="*">
+					<textbox tag="title" width="100%" focus="true" />
+				</panel>					
+			</layoutbox>
+		</panel>
+		<panel size="*">
+		</panel>
+		<panel size="45px">
+			<layoutbox type="vertical">
 				<panel size="*">
 				</panel>
-				<panel size="45px">
-					<layoutbox type="vertical">
-						<panel size="*">
-						</panel>
-						<panel size="210px">
-							<button tag="create" label="Create" width="100px" disabled="true"/>
-							<button tag="close" label="Close" width="100px" />
-						</panel>						
-					</layoutbox>
-				</panel>
+				<panel size="210px">
+					<button tag="create" label="Create" width="100px" disabled="true"/>
+					<button tag="close" label="Close" width="100px" />
+				</panel>						
 			</layoutbox>
-		</container>
-	</canvas>
+		</panel>
+	</layoutbox>
 </sui>
 

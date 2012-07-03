@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="sForm/sForm/Runtime.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="sForm/resources/content/index_script_form.stpl">
     <Files>
-      <File FileName="sForm/sForm/Runtime.cs" Line="34" Column="1" />
-      <File FileName="sForm/sForm.Addin/Function.cs" Line="43" Column="32" />
-      <File FileName="sForm/sForm/Form.cs" Line="301" Column="64" />
-      <File FileName="sForm/build.sh" Line="30" Column="1" />
+      <File FileName="sForm/resources/xml/form_create.xml" Line="15" Column="22" />
+      <File FileName="sForm/resources/content/index_script_form.stpl" Line="114" Column="23" />
+      <File FileName="sForm/resources/xml/form_edit.xml" Line="82" Column="1" />
+      <File FileName="sForm/resources/content/index.stpl" Line="7" Column="24" />
+      <File FileName="sForm/resources/content/index_script.stpl" Line="11" Column="75" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
