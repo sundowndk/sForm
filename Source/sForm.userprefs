@@ -1,5 +1,5 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.Workbench ActiveDocument="sForm/resources/content/index_script_form.stpl">
     <Files>
       <File FileName="sForm/resources/xml/form_create.xml" Line="15" Column="22" />

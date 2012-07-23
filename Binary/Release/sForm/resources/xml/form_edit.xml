@@ -1,89 +1,85 @@
 <sui elementheight="50px">
-	<canvas width="800px" height="450px" canScroll="false">	
-		<container title="Edit form" icon="Icon32Edit" stylesheet="SUIContainerModal">
-			<layoutbox type="horizontal" stylesheet="LayoutboxNoborder">			
-				<panel size="*">
-					<tabview>
-						<tab label="Details" selected="true">
-							<layoutbox type="horizontal">											
-								<panel size="%elementheight%">
-									<layoutbox type="vertical">
-										<panel size="100px">
-											<label text="Title"/>
-										</panel>					
-										<panel size="*">
-											<textbox tag="title" width="100%" />
-										</panel>					
-									</layoutbox>
-								</panel>
-								<panel size="%elementheight%">
-									<layoutbox type="vertical">
-										<panel size="100px">
-											<label text="Id"/>
-										</panel>					
-										<panel size="*">
-											<textbox tag="id" width="100%" readOnly="true" />
-										</panel>					
-									</layoutbox>
-								</panel>								
-								<panel size="%elementheight%">
-									<layoutbox type="vertical">
-										<panel size="100px">
-											<label text="To"/>
-										</panel>					
-										<panel size="*">
-											<textbox tag="emailto" width="100%" />
-										</panel>					
-									</layoutbox>
-								</panel>							
-								<panel size="%elementheight%">
-									<layoutbox type="vertical">
-										<panel size="100px">
-											<label text="From"/>
-										</panel>					
-										<panel size="*">
-											<textbox tag="emailfrom" width="100%" />
-										</panel>					
-									</layoutbox>
-								</panel>
-								<panel size="%elementheight%">
-									<layoutbox type="vertical">
-										<panel size="100px">
-											<label text="Subject"/>
-										</panel>					
-										<panel size="*">
-											<textbox tag="emailsubject" width="100%" />
-										</panel>					
-									</layoutbox>
-								</panel>								
+	<layoutbox type="horizontal" stylesheet="LayoutboxNoborder">			
+		<panel size="*">
+			<tabview>
+				<tab label="Details" selected="true">
+					<layoutbox type="horizontal">											
+						<panel size="%elementheight%">
+							<layoutbox type="vertical">
+								<panel size="100px">
+									<label text="Title"/>
+								</panel>					
 								<panel size="*">
-								</panel>
+									<textbox tag="title" width="100%" />
+								</panel>					
 							</layoutbox>
-						</tab>
-						<tab label="Content">
-							<layoutbox type="horizontal">			
-								<panel size="*">										
-									<textarea tag="emailbody" width="100%" height="100%">
-										<codemirror lineNumbers="true" textWrapping="false" enterMode="keep" />
-									</textarea>		
-								</panel>
-							</layoutbox>					
-						</tab>
-					</tabview>
-				</panel>
-				<panel size="45px">
-					<layoutbox type="vertical">
-						<panel size="*">							
 						</panel>
-						<panel size="210px">
-							<button tag="save" label="Save" width="100px" disabled="true"/>
-							<button tag="close" label="Close" width="100px" />
-						</panel>						
+						<panel size="%elementheight%">
+							<layoutbox type="vertical">
+								<panel size="100px">
+									<label text="Id"/>
+								</panel>					
+								<panel size="*">
+									<textbox tag="id" width="100%" readOnly="true" />
+								</panel>					
+							</layoutbox>
+						</panel>								
+						<panel size="%elementheight%">
+							<layoutbox type="vertical">
+								<panel size="100px">
+									<label text="To"/>
+								</panel>					
+								<panel size="*">
+									<textbox tag="emailto" width="100%" />
+								</panel>					
+							</layoutbox>
+						</panel>							
+						<panel size="%elementheight%">
+							<layoutbox type="vertical">
+								<panel size="100px">
+									<label text="From"/>
+								</panel>					
+								<panel size="*">
+									<textbox tag="emailfrom" width="100%" />
+								</panel>					
+							</layoutbox>
+						</panel>
+						<panel size="%elementheight%">
+							<layoutbox type="vertical">
+								<panel size="100px">
+									<label text="Subject"/>
+								</panel>					
+								<panel size="*">
+									<textbox tag="emailsubject" width="100%" />
+								</panel>					
+							</layoutbox>
+						</panel>								
+						<panel size="*">
+						</panel>
 					</layoutbox>
+				</tab>
+				<tab label="Content">
+					<layoutbox type="horizontal">			
+						<panel size="*">										
+							<textarea tag="emailbody" width="100%" height="100%">
+								<codemirror lineNumbers="true" textWrapping="false" enterMode="keep" />
+							</textarea>		
+						</panel>
+					</layoutbox>					
+				</tab>
+			</tabview>
+		</panel>
+		<panel size="45px">
+			<layoutbox type="vertical">
+				<panel size="*">							
 				</panel>
-			</layoutbox>				
-		</container>
-	</canvas>
+				<panel size="210px">
+					<button tag="save" label="Save" width="100px" disabled="true"/>
+					<button tag="close" label="Close" width="100px" />
+				</panel>						
+			</layoutbox>
+		</panel>
+	</layoutbox>				
 </sui>
 
 
