@@ -1,12 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="sForm/resources/content/index_script_form.stpl">
+  <MonoDevelop.Ide.Workbench ActiveDocument="sForm/sForm/Form.cs">
     <Files>
       <File FileName="sForm/resources/xml/form_create.xml" Line="15" Column="22" />
       <File FileName="sForm/resources/content/index_script_form.stpl" Line="114" Column="23" />
       <File FileName="sForm/resources/xml/form_edit.xml" Line="82" Column="1" />
       <File FileName="sForm/resources/content/index.stpl" Line="7" Column="24" />
       <File FileName="sForm/resources/content/index_script.stpl" Line="11" Column="75" />
+      <File FileName="sForm/javascript/form.js" Line="1" Column="1" />
+      <File FileName="sForm/sForm.Addin/Ajax.cs" Line="86" Column="28" />
+      <File FileName="sForm/sForm.Addin/Function.cs" Line="66" Column="14" />
+      <File FileName="sForm/sForm/Form.cs" Line="224" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

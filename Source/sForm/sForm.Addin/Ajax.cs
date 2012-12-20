@@ -80,6 +80,13 @@ namespace sForm.Addin
 							break;
 						}
 
+						case "send":
+						{
+							Form form = Form.Load (request.getValue<Guid> ("id"));
+							form.Send (Session);							
+							break;
+						}
+
 						case "list":
 						{
 //							if (Session.AccessLevel < SorentoLib.Enums.Accesslevel.Author) throw new Exception (string.Format (Autoform.Strings.Exception.AjaxSessionPriviliges, "form.list"));
